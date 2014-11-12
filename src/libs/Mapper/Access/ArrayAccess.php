@@ -2,11 +2,11 @@
 
 namespace MMD\MapMyData\Mapper\Access;
 
-class ObjectToArrayAccess extends AbstractAccess
+class ArrayAccess implements AccessSetInterface, AccessGetInterface
 {
 	public function getValue($dataSource, $fieldSource)
 	{
-		return $dataSource->$fieldSource;
+		return $dataSource[ $fieldSource ];
 	}
 
 	public function setValue($result, $field, $value)
