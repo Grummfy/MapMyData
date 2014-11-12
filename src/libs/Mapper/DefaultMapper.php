@@ -5,10 +5,8 @@ namespace MMD\MapMyData\Mapper;
 use MMD\MapMyData\Definition\DefinitionInterface;
 use MMD\MapMyData\Mapper\Access\AccessInterface;
 use MMD\MapMyData\Mapper\Access\ArrayToArrayAccess;
-use MMD\MapMyData\Mapper\Transformer\DecoratorInterface;
-use MMD\MapMyData\Mapper\Transformer\DecoratorableInterface;
 
-class Mapper implements MapperInterface
+class DefaultMapper implements MapperInterface
 {
 	/**
 	 * @var DefinitionInterface
@@ -34,6 +32,7 @@ class Mapper implements MapperInterface
 	public function setDefinition(DefinitionInterface $definition)
 	{
 		$this->_definition = $definition;
+
 		return $this;
 	}
 

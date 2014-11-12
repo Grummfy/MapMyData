@@ -24,6 +24,11 @@ class ComposedAccess implements AccessInterface
 	{
 		$data = $this->_getter->getValue($dataSource, $fieldSource);
 
+		if (is_callable($data))
+		{
+			// TODO treat callable call
+		}
+
 		$dataResult = $this->_setter->setValue($dataResult, $fieldDestination, $data);
 
 		return $dataResult;
