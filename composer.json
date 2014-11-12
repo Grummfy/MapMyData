@@ -1,0 +1,20 @@
+{
+    "name"       : "mmd/MapMyData",
+    "description": "Map My Data",
+    "type"       : "library",
+    "keywords"   : ["library", "mapping", "data"],
+    "license"    : "TO defined",
+    "authors"    : [
+        {
+            "name" : "Grummfy",
+            "email": "grummfy@gmail.com"
+        }
+    ],
+    "require": {
+    },
+    "autoload"  : {
+		"psr-4": {
+			"MMD\\MapMyData\\": "src/libs"
+		}
+	}
+}
