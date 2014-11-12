@@ -12,9 +12,6 @@
     ],
     "require": {
     },
-    "require-dev": {
-        "phpspec/phpspec": "~2.1@beta"
-    },
     "autoload"  : {
 		"psr-4": {
 			"MMD\\MapMyData\\": "src/libs"

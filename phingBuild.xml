@@ -1,0 +1,14 @@
+<project name="build-qa-report" default="qa-tools">
+
+
+    <target name="qa-tools" depends="atoum" />
+
+    <target name="atoum" description="Unit test">
+        <exec executable="atoum" logoutput="true" checkreturn="true" level="debug">
+            <arg value=" -bf externals/tools/atoum/.bootstrap.atoum.php"/>
+            <arg value=" -c externals/tools/atoum/.atoum.php"/>
+            <arg value=" -d tests/atoum/"/>
+            <arg path="."/>
+        </exec>
+    </target>
+</project>

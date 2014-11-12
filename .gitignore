@@ -5,3 +5,6 @@ atlassian-ide-plugin.xml
 # dependency management
 vendor/*
 bin/*
+tests/manual/*
+tests/reports/*
+!tests/reports/.gitkeep
