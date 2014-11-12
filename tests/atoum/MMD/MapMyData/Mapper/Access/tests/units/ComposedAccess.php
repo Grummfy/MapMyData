@@ -18,17 +18,23 @@ class ComposedAccess extends \atoum\test
 
 		$setter->getMockController()->setValue = function($dataResult, $fieldDestination, $data)
 		{
-			return; // $this;
+			$dataResult[ $fieldDestination ] = $data;
+			return $dataResult;
 		};
 
 		$testClass = new TestedClass($getter, $setter);
 
-		$dataSource = [];
+		$dataSource = ['test'=>'OK'];
 		$dataResult = [];
 		$fieldSource = 'test';
-		$fieldDestination = 'test';
+		$fieldDestination = 'test2';
 
-		$testClass->mapToDestination($dataSource, $dataResult, $fieldSource, $fieldDestination);
+		$res = $testClass->mapToDestination($dataSource, $dataResult, $fieldSource, $fieldDestination);
+
+		$this->array($res)
+			->isNotEqualTo($dataResult)
+			->isEqualTo(['test2' => 'OK']);
+
 		$this->object($testClass)
 		     ->mock($getter)
 		     ->call('getValue')
@@ -40,13 +46,4 @@ class ComposedAccess extends \atoum\test
 		     ->once();
 
 	}
-
-//	public function mapToDestination($dataSource, $dataResult, $fieldSource, $fieldDestination)
-//	{
-//		$data = $this->_getter->getValue($dataSource, $fieldSource);
-//
-//		$dataResult = $this->_setter->getValue($dataResult, $fieldDestination, $data);
-//
-//		return $dataResult;
-//	}
 }

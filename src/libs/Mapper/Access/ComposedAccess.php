@@ -24,7 +24,7 @@ class ComposedAccess implements AccessInterface
 	{
 		$data = $this->_getter->getValue($dataSource, $fieldSource);
 
-		$dataResult = $this->_setter->getValue($dataResult, $fieldDestination, $data);
+		$dataResult = $this->_setter->setValue($dataResult, $fieldDestination, $data);
 
 		return $dataResult;
 	}
