@@ -1,0 +1,11 @@
+# @see http://www.phpspec.net/cookbook/configuration.html
+
+suites:
+    mmd_suite:
+        namespace: MMD\MapMyData
+        #psr4_prefix: MMD\MapMyData
+        spec_path: tests
+        src_path: src/libs
+
+formatter.name:
+    pretty
