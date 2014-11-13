@@ -24,7 +24,7 @@ class DefaultMapper extends \atoum\test
 	/**
 	 * @dataProvider definitionDataProvider
 	 */
-	public function testMapToArray($definition)
+	public function testMapToArray(DefinitionInterface $definition)
 	{
 		$access = new ArrayAccess();
 		$composedAccess = new ComposedAccess($access, $access);
