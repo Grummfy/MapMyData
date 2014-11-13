@@ -58,6 +58,21 @@ class DefaultMapper implements MapperInterface
 	}
 
 	/**
+	 * @param array $accesses
+	 *
+	 * @return $this
+	 */
+	public function addAccesses(array $accesses)
+	{
+		foreach ($accesses as $destination => $access)
+		{
+			$this->addAccess($destination, $access);
+		}
+
+		return $this;
+	}
+
+	/**
 	 * Map to array
 	 * @param array $source
 	 *

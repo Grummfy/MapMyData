@@ -30,8 +30,10 @@ class DefaultMapper extends \atoum\test
 		$composedAccess = new ComposedAccess($access, $access);
 
 		$testedClass = new TestedClass();
-		$testedClass->addAccess('A', $composedAccess);
-		$testedClass->addAccess('B', $composedAccess);
+		$testedClass->addAccesses([
+			'A' => $composedAccess,
+			'B' => $composedAccess
+		]);
 
 		$testedClass->setDefinition($definition);
 
