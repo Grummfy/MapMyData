@@ -1,6 +1,8 @@
 # Notice
 Instable project
 
+[![Build Status](https://travis-ci.org/Grummfy/MapMyData.png?branch=master)](https://travis-ci.org/Grummfy/MapMyData)
+
 # Map my data
 The purpose of this project is to map data.
 
