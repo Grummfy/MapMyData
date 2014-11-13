@@ -28,7 +28,6 @@ The purpose of this project is to map data.
 	| baz         | ------ .... ---->   +-------------+
 	+-------------+	                    |     dataBb  |
 	                                    +-------------+
-	                                    +-------------+
 	                                    | id          |
 	                                    | baz         |
 	                                    | bar         |
@@ -38,3 +37,18 @@ The purpose of this project is to map data.
 ## Extra
 ### Transformation of data
 The transformation of data is possible through anonymous functions.
+
+	+-------------+                     +-------------+
+	|    dataA    |	------ .... ---->   |     dataBa  |
+	+-------------+                     +-------------+
+	| id          |                     | id          |
+	| label       |                     | label       |
+	| foo         |                     | foobar      |
+	| bar         |                     +-------------+
+	| baz         | ------ .... ---->   +-------------+
+	+-------------+	                    |     dataBb  |
+	                                    +-------------+
+	                                    | id          |
+	                                    | foobaz      |
+	                                    | bar         |
+	                                    +-------------+

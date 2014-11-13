@@ -37,6 +37,14 @@ class DefaultMapper implements MapperInterface
 	}
 
 	/**
+	 * @return DefinitionInterface
+	 */
+	public function getDefinition()
+	{
+		return $this->_definition;
+	}
+
+	/**
 	 * Add a destination accessor/setter
 	 * @param string $destination
 	 * @param AccessInterface $access
