@@ -32,7 +32,8 @@ class DefaultMapper extends \atoum\test
 		$testedClass = new TestedClass();
 		$testedClass->addAccesses([
 			'A' => $composedAccess,
-			'B' => $composedAccess
+			'B' => $composedAccess,
+			'C' => $composedAccess
 		]);
 
 		$testedClass->setDefinition($definition);
@@ -58,6 +59,9 @@ class DefaultMapper extends \atoum\test
 					'foo'    => $dataSource['foo'],
 					'baz'    => $dataSource['bar'],
 					'bar'    => $dataSource['baz']
+				],
+				'C' => [
+					'foobar'    => $dataSource['foo'] . '-' . $dataSource['baz']
 				]
 			]);
 	}
@@ -82,14 +86,18 @@ class DefaultMapper extends \atoum\test
 				],
 				'baz'    => [
 					'A' => 'baz',
-					'B' => 'bar'
+					'B' => 'bar',
+					'C' => array('foobar', function($dataSource, $dataResult, $fieldSource, $fieldDestination)
+					{
+						return $dataSource['foo'] . '-' . $dataSource['baz'];
+					})
 				]
 			];
 		};
 
 		$definition->getMockController()->getMapDestinations = function()
 		{
-			return ['A', 'B'];
+			return ['A', 'B', 'C'];
 		};
 
 		return array($definition);
