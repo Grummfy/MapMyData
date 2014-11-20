@@ -24,10 +24,19 @@ class ComposedAccess implements AccessInterface
 	{
 		$data = $this->_getter->getValue($dataSource, $fieldSource);
 
-		if (is_array($fieldDestination) && is_callable($fieldDestination[1]))
+		// TODO improve this to let beeing exploitable in another way => without ComposedAccess ...
+		if (is_array($fieldDestination))
 		{
-			$data = $fieldDestination[1]($dataSource, $dataResult, $fieldSource, $fieldDestination, $data);
-			$fieldDestination = $fieldDestination[0];
+			if (isset($fieldDestination[1]) && is_callable($fieldDestination[1]))
+			{
+				$data = $fieldDestination[1]($dataSource, $dataResult, $fieldSource, $fieldDestination, $data);
+				$fieldDestination = $fieldDestination[0];
+			}
+			elseif (isset($fieldDestination[0]) && is_callable($fieldDestination[0]))
+			{
+				$data = $fieldDestination[0]($dataSource, $dataResult, $fieldSource, $fieldDestination, $data);
+				return $dataResult;
+			}
 		}
 
 		$dataResult = $this->_setter->setValue($dataResult, $fieldDestination, $data);

@@ -48,22 +48,22 @@ class DefaultMapper extends \atoum\test
 		$result = $testedClass->mapArray($dataSource);
 
 		$this->array($result)
-			->isEqualTo([
-				'A' => [
-					'id_ref' => $dataSource['id'],
-					'foo'    => $dataSource['foo'],
-					'BAR'    => $dataSource['bar'],
-					'baz'    => $dataSource['baz']
-				],
-				'B' => [
-					'foo'    => $dataSource['foo'],
-					'baz'    => $dataSource['bar'],
-					'bar'    => $dataSource['baz']
-				],
-				'C' => [
-					'foobar'    => $dataSource['foo'] . '-' . $dataSource['baz']
-				]
-			]);
+		     ->isEqualTo([
+			     'A' => [
+				     'id_ref' => $dataSource['id'],
+				     'foo'    => $dataSource['foo'],
+				     'BAR'    => $dataSource['bar'],
+				     'baz'    => $dataSource['baz']
+			     ],
+			     'B' => [
+				     'foo'    => $dataSource['foo'],
+				     'baz'    => $dataSource['bar'],
+				     'bar'    => $dataSource['baz']
+			     ],
+			     'C' => [
+				     'foobar'    => $dataSource['foo'] . '-' . $dataSource['baz']
+			     ]
+		     ]);
 	}
 
 	public function definitionDataProvider()
