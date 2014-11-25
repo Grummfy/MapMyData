@@ -102,6 +102,10 @@ class DefaultMapper implements MapperInterface
 		// treat source for the destination
 		foreach ($destination as $alias => $destinationField)
 		{
+			if (!isset($this->_accesses[ $alias ]))
+			{
+				continue;
+			}
 			$this->_results[ $alias ] = $this->_accesses[ $alias ]->mapToDestination($source, $this->_results[ $alias ], $field, $destinationField);
 		}
 	}
