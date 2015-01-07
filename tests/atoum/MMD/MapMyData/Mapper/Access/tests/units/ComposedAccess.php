@@ -16,6 +16,11 @@ class ComposedAccess extends \atoum\test
 			return 'OK';
 		};
 
+		$getter->getMockController()->issetValue = function($dataSource, $fieldSource)
+		{
+			return true;
+		};
+
 		$setter->getMockController()->setValue = function($dataResult, $fieldDestination, $data)
 		{
 			$dataResult[ $fieldDestination ] = $data;
