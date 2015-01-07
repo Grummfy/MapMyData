@@ -22,7 +22,7 @@ class ComposedAccess implements AccessInterface
 
 	public function mapToDestination($dataSource, $dataResult, $fieldSource, $fieldDestination)
 	{
-		$data = $this->_getter->getValue($dataSource, $fieldSource);
+		$data = $this->_getter->issetValue($dataSource, $fieldSource) ? $this->_getter->getValue($dataSource, $fieldSource) : null;
 
 		// TODO improve this to let beeing exploitable in another way => without ComposedAccess ...
 		if (is_array($fieldDestination))

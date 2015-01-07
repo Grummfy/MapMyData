@@ -10,6 +10,11 @@ class ObjectMutatorAccess implements AccessSetInterface, AccessGetInterface
 		return $dataSource->$method();
 	}
 
+	public function issetValue($dataSource, $fieldSource)
+	{
+		return true;
+	}
+
 	public function setValue($result, $field, $value)
 	{
 		$method = 'set' . ucfirst($field);

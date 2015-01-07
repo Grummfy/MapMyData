@@ -30,4 +30,15 @@ class ObjectAccess extends \atoum\test
 		     ->string($toTest->getValue($data, 'test'))
 		     ->isEqualTo($data->test);
 	}
+
+	public function testIssetValue()
+	{
+		$data = new \stdClass();
+		$data->test = 'OK';
+
+		$toTest = new TestedClass();
+		$this->assert()
+		     ->boolean($toTest->issetValue($data, 'test'))
+		     ->isTrue();
+	}
 }

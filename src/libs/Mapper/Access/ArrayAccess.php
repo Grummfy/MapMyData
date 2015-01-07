@@ -9,6 +9,11 @@ class ArrayAccess implements AccessSetInterface, AccessGetInterface
 		return $dataSource[ $fieldSource ];
 	}
 
+	public function issetValue($dataSource, $fieldSource)
+	{
+		return isset($dataSource[ $fieldSource ]);
+	}
+
 	public function setValue($result, $field, $value)
 	{
 		$result[ $field ] = $value;

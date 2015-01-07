@@ -14,4 +14,9 @@ class ObjectAccess implements AccessSetInterface, AccessGetInterface
 		$result->$field = $value;
 		return $result;
 	}
+
+	public function issetValue($dataSource, $fieldSource)
+	{
+		return isset($dataSource->$fieldSource);
+	}
 }

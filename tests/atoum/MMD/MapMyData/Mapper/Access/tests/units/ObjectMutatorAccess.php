@@ -33,6 +33,17 @@ class ObjectMutatorAccess extends \atoum\test
 		     ->string($toTest->getValue($data, 'test'))
 		     ->isEqualTo('OK');
 	}
+
+	public function testIssetValue()
+	{
+		$data = new MyContainer();
+		$data->setTest('OK');
+
+		$toTest = new TestedClass();
+		$this->assert()
+		     ->boolean($toTest->issetValue($data, 'test'))
+		     ->isTrue();
+	}
 }
 
 class MyContainer
