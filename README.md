@@ -1,5 +1,4 @@
-# Notice
-Instable project
+The purpos of this library is to help the change between on system of data to another. Whatever this data are (array, object, ...)
 
 [![Build Status](https://travis-ci.org/Grummfy/MapMyData.png?branch=master)](https://travis-ci.org/Grummfy/MapMyData)
 
