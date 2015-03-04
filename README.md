@@ -1,9 +1,13 @@
-The purpos of this library is to help the change between on system of data to another. Whatever this data are (array, object, ...)
+The purpose of this library is to help the change between on system of data to another. Whatever this data are (array, object, ...). It's a basic library that can help to build A MDM (Master Data Management) or just convert data from an API.
+
+You can map data from :
+* 1 entity to 1 other entity
+* 1 entity to n other entities
+* 
+All of this with or without transformations.
 
 [![Build Status](https://travis-ci.org/Grummfy/MapMyData.png?branch=master)](https://travis-ci.org/Grummfy/MapMyData)
-
 # Map my data
-The purpose of this project is to map data.
 
 	1. 1 to 1
 	+-------------+                     +-------------+
